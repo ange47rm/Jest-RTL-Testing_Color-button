@@ -1,10 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [buttonColour, setButtonColour] = useState('red');
+
+  const newButtonColour = buttonColour === 'red' ? 'blue' : 'red';
+
   return (
     <div>
-      <button style={{ backgroundColor: 'red' }}>Change to blue</button>
+      <button 
+      onClick={() => {setButtonColour(newButtonColour)}} 
+      style={{ backgroundColor: buttonColour }}>
+        Change to {newButtonColour}</button>
     </div>
   );
 }
